@@ -1,0 +1,124 @@
+<ion-modal-view ng-controller="AppCtrl">
+    <ion-header-bar class="bar-calm">
+
+        <!-- style attribute for Android -->
+        <h1 class="title" style="text-align:center!important;">Registro</h1>
+
+        <!-- Button left -->
+        <button class="button button-icon button-clear button-light ion-ios-arrow-thin-left" ng-click="closeRegister()"></button>
+
+        <!-- Button right [empty] -->
+        <button class="button button-icon button-clear button-light"></button>
+
+    </ion-header-bar>
+
+    <ion-content scroll="false">
+        <div class="list">
+            <form name="registerForm" ng-submit="submit()">
+
+                <!--  <label class="item item-input item-stacked-label">
+                        <span class="input-label">Email</span>
+                        <input type="text" name="email" placeholder="Mail" ng-model="data.email">
+                    </label>
+-->
+
+
+
+                <label class="item item-input">
+        <i class="icon ion-ios-email-outline placeholder-icon-large"></i>
+        <input name="correo" type="email" placeholder="Correo" ng-model="data.email" required>
+      </label>
+                <div class="errorFormu" ng-show="registerForm.correo.$error.email">
+                    ¡Correo no valido!
+                </div>
+                <label class="item item-input">
+        <i class="icon ion-ios-locked-outline placeholder-icon-large"></i>
+        <input type="password" placeholder="Contraseña" ng-model="data.password" required>
+      </label>
+                <label class="item item-input">
+        <i class="icon ion-android-person placeholder-icon-large"></i>
+        <input type="text" placeholder="Nombre" ng-model="data.nombre" required>
+      </label>
+                <label class="item item-input">
+        <i class="icon ion-android-person placeholder-icon-large"></i>
+        <input type="text" placeholder="Apellido" ng-model="data.apellido" required>
+      </label>
+                <label class="item item-input">
+        <i class="icon ion-ios-telephone placeholder-icon-large"></i>
+        <input type="text" placeholder="Teléfono" ng-model="data.telefono" required>
+      </label>
+
+<br>
+<br>
+                <div class="row">
+                    <div class="col col">
+                        <ion-checkbox ng-init="data.termcond=false" ng-model="data.termcond"></ion-checkbox>
+                    </div>
+                    <div class="col-90"><label class="lblcol" ng-click="openTerminos()">Términos y Condiciones</label> </div>
+
+                </div>
+                <div class="row">
+                    <div class="col col">
+                        <ion-checkbox ng-init="data.polpriv=false" ng-model="data.polpriv"></ion-checkbox>
+                    </div>
+                    <div class="col-90"><label class="lblcol" ng-click="openPoliticas()">Pólitica de Privacidad</label> </div>
+
+                </div>
+
+
+
+
+
+
+                <div class="validation-center">
+                    <input ng-show="registerForm.$valid && data.polpriv && data.termcond && btnRegistro" class="button button-balanced" type="submit" name="submit" value="Enviar registro">
+                    <div class="validation-center">
+            </form>
+          <!--  <p class="calm text-center">
+                Debes registrarte <br/>con un correo real
+            </p> -->
+
+            <div ng-show="response.length>0" class="card">
+                <div class="item item-text-wrap">
+                    <b ng-bind="response"></b>
+                </div>
+            </div>
+    </ion-content>
+</ion-modal-view>
+
+<style>
+    .col {
+        border: none;
+        border: 0px solid black;
+    }
+    
+    .col-90 {
+        border: none;
+        text-align: left;
+        margin-top: 9px;
+    }
+    
+    .lblcol {
+        /*font-size: 18px;*/
+        display: block;
+        text-align: left;
+        position: relative;
+        left: 16%;
+    }
+    
+    .checkbox input:checked:before,
+    .checkbox input:checked+.checkbox-icon:before {
+        background: #11C1F3 !important;
+        border: none;
+    }
+    
+    .item-checkbox {
+        padding-left: 60px;
+        border: none;
+    }
+    
+    .errorFormu {
+        text-align: center;
+        color: red;
+    }
+</style>

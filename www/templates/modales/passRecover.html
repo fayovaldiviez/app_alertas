@@ -1,0 +1,41 @@
+<ion-modal-view>
+    <ion-header-bar class="bar-calm">
+
+        <!-- style attribute for Android -->
+        <h1 class="title" style="text-align:center!important;">Recuperar Contraseña</h1>
+
+        <!-- Button left -->
+        <button class="button button-icon button-clear button-light ion-ios-arrow-thin-left" ng-click="closeRecover()"></button>
+
+        <!-- Button right [empty] -->
+        <button class="button button-icon button-clear button-light"></button>
+
+    </ion-header-bar>
+
+    <ion-content scroll="false">
+        <div class="list">
+            <label class="item item-input">
+        <i class="icon ion-ios-email-outline placeholder-icon-large"></i>
+        <input type="text" ng-model="mail" placeholder="Mail">
+      </label>
+        </div>
+
+        <p class="calm text-center">
+            Ingresa tu correo electronico<br/> te enviaremos tu contraseña en breve!
+        </p>
+        <div class="validation-center">
+            <!--<button ng-disabled="!mail.length" class="button button-balanced" ng-click="recoverKey(mail)" value="Enviar registro">-->
+            <button ng-disabled="!mail.length" ng-click="recoverKey(mail)" class="button button-balanced">
+   ¡Recuperar!
+</button>
+
+            <div class="validation-center">
+
+                <div class="card" ng-show="respuestaRecover.length">
+                    <div class="item item-text-wrap">
+                        <b ng-bind="respuestaRecover"></b>
+                    </div>
+                </div>
+
+    </ion-content>
+</ion-modal-view>

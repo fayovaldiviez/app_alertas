@@ -1,0 +1,138 @@
+<ion-view title="Reporte Directo C4" id="chat2">
+  <ion-content class="chat" delegate-handle="chatScroll">
+
+    <div class="message-list">
+      <div ng-repeat="message in messages" class="message-wrapper">
+        <!--<div ng-class="{'message message-other': message.usuario!=localuser,'message message-mine': messge.usuario=localuser}">-->
+        <div ng-class="[getClassMessage(message.usuario)]">
+         
+                         <!--SI EL TIPO ES IMAGEN MOSTRARA LA IMAGEN  -->
+                         <div ng-if="message.tipo == 'imagen'">
+                           <div class="message-text"> {{ message.usuario }}</div> 
+                           <div class="message-text"><img ng-src="{{message.value}}" width="205" height="200 "/></div>
+                        </div>   
+                        <!--SI EL TIPO NO ES IMAGEN , MOSTRARA EL MENSAJE UNICAMENTE -->
+                         <div ng-if= "message.tipo == 'mensaje'">
+                          <div class="message-text"> {{ message.usuario }}</div> 
+                           <div class="message-text">{{ message.value }}</div>  
+                          </div> 
+                           <!-- SI EL TIPO DE ARCHIVO ES VIDEO , CARGA "TEMPLATE DE VIDEO "  -->
+                         <div ng-if="message.tipo == 'video'">
+                           <div class="message-text"> {{ message.usuario }}</div> 
+                           <div class="message-text"><div class="videoContainer"><video ng-src="{{ message.value }}" controls  preload></video></div></div>
+                        </div> 
+
+                       <!-- SI EL TIPO DE ARCHIVO ES AUDIO , CARGA "TEMPLATE DE AUDIO "  -->
+                         <div ng-if="message.tipo == 'audio'">
+                           <div class="message-text"> {{ message.usuario }}</div> 
+                           <div class="message-text"><audio style="width: 100%;" ng-src="{{ message.value }}" controls></audio></div>
+                        </div> 
+
+                                          
+
+             </div>
+
+          
+           </div>
+
+                <!-- inicio template carga -->
+               <div class="message message-mine" ng-if="uploadProgress > 0">
+
+
+                           <!-- SI Esta cargando un archivo  -->
+                        
+                      <div  >
+                           <div class="message-text"> {{ localuser }}</div> 
+                           <div class="message-text">
+                             <round-progress
+                         max=100
+                        current= uploadProgress
+                        color="#45ccce"
+                        bgcolor="#FFFFFF"
+                        radius="100"
+                        stroke="10"
+                        semi="false"
+                       rounded="true"    
+                        clockwise="true"
+                       responsive="true"
+                          duration="100"
+                         animation="linearEase"
+                         animation-delay="10">
+                             
+                         </round-progress>
+
+                          <br>
+                          <br>
+                              </div>
+                           </div>
+                                          
+
+             </div>
+
+             <!-- fin para template de carga -->
+
+
+
+        </div>
+    
+
+     <img id="imageid" src="http://localhost/imagen/mailopen.png" style="display:none">
+
+
+  </ion-content>
+  <ion-footer-bar keyboard-attach class="bar-stable footer-chat item-input-inset">
+    <!--<button  ng-click="addInfo()" class="button button-clear button-icon icon ion-ios-upload-outline"></button>-->
+   <!--<input type="file" id="file">-->
+
+ 
+    <label class="item-input-wrapper">
+      <input  class="message_input"
+              ng-model="newmessage.value"
+              ng-model="detail.data.message"
+              on-return="detail.sendMessage(); detail.closeKeyboard()"
+              on-focus="detail.inputUp()"
+              on-blur="detail.inputDown()"
+              dir="auto"
+              type="text"/>
+    </label>
+ 
+    <span ng-if="newmessage.value.length > 0">
+      <button ng-click="sendMessage()" class="button button-clear ">Enviar</button>
+
+    </span>
+    <span ng-if="!newmessage.value || newmessage.value.length === 0">
+      <button  ng-click="addImage()" class="button button-clear button-icon icon ion-ios-camera-outline"></button>
+      <i class="buttons-seperator icon ion-android-more-vertical"></i>
+      <button ng-click="record()" class="button button-clear button-icon icon ion-ios-mic-outline"></button>
+      <i class="buttons-seperator icon ion-android-more-vertical"></i>
+      <button ng-click="captureVideo()" class="button button-clear button-icon icon ion-ios-videocam-outline"></button>
+    </span>
+
+<!--<div class="card" ng-show=" uploadProgress > 0">
+      <div class="item item-text-wrap">
+        <div class="loader" style="width: {{uploadProgress}}%;">
+          <p class="percent">{{uploadProgress}}%</p>
+        </div>
+      </div>
+    </div>-->
+  </ion-footer-bar>
+
+
+</ion-view>
+
+
+     <style type="text/css">
+
+            .clearfix:before,.clearfix:after {content: " "; display: table;}
+            .clearfix:after {clear: both;}
+            .clearfix {*zoom: 1;}
+
+video {
+  width: 100%    !important;
+  height: auto   !important;
+}
+        </style>
+
+
+
+

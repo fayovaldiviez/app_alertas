@@ -1,0 +1,74 @@
+<ion-view hide-nav-bar="true">
+
+    <!-- Footer -->
+    <ion-content has-header="true" padding="true" scroll="false">
+
+    </ion-content>
+
+    <!-- Content -->
+    <ion-content has-header="true" padding="true" class="scroll-vertical background">
+        <img src="img/naucalpan.png" style="width:200px;margin-bottom:40px;">
+
+        <div class="row row-center center-content">
+            <div class="col col-center">
+
+                <!-- Form -->
+                <div class="list list-inset">
+                    <label class="item item-input bar">
+            <i class="icon ion-ios-email-outline placeholder-icon-large"></i>
+            <input type="text" placeholder="Mail" ng-model="user.email">
+          </label>
+                    <label class="item item-input bar">
+            <i class="icon ion-ios-locked-outline placeholder-icon-large"></i>
+            <input type="password" placeholder="Contraseña" ng-model="user.password">
+          </label>
+                </div>
+
+                <!-- Connexion button -->
+                <a class="button button-block button-assertive" ng-click="loginUser(user)">
+          Login
+        </a>
+                <div class="col col-left">
+                    <a href="" ng-click="openRegister()">Registrarse</a>
+                    <br>
+                    <br>
+                    <a href="" ng-click="openRecover()">¿Olvidó su Contraseña?</a>
+                </div>
+
+
+                <!-- Error -->
+                <div class="card" ng-if="error">
+                    <div class="item item-text-wrap">
+                        <p class="assertive text-center"><strong>{{ error }}</strong></p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>
+
+<style>
+    /* unvisited link */
+    
+    a:link {
+        color: #FF4537;
+    }
+    /* visited link */
+    
+    a:visited {
+        color: #ffffff;
+    }
+    /* mouse over link */
+    
+    a:hover {
+        color: #EF473A;
+    }
+    /* selected link */
+    
+    a:active {
+        color: #EF473A;
+    }
+</style>

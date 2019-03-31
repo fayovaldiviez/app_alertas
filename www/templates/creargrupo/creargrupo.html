@@ -1,0 +1,41 @@
+<ion-view view-title="Chat Grupal" id="creargrupo">
+    <ion-content class="stable-bg">
+  
+            <div class="list">
+                <div class="item item-input-inset">
+                    <label class="item-input-wrapper">
+                        <input type="text" placeholder="Email" ng-model="nombre">
+                    </label>
+                    <label class="item-input-wrapper">
+                        <input type="text" placeholder="Telefono" ng-model="telefono">
+                    </label>
+                       <button class="button button-clear button-positive icon" ng-click="add(nombre,telefono)">
+                        <i class="ion-ios-plus-outline"></i> Agregar
+                    </button>
+                   
+                </div>
+              
+
+            </div>
+
+            <ion-list show-delete="false" can-swipe="true">
+                <ion-item ng-repeat="thing in things track by $index ">
+                     {{thing[0].nombre}}
+
+                    <ion-option-button class="button-assertive ion-trash-b" ng-click="remove(thing)"></ion-option-button>
+                </ion-item>
+       <label class="item item-input item-floating-label">
+    <span class="input-label">Nombre del grupo</span>
+    <input id="nombregrupo" type="text" placeholder="Nombre del grupo">
+  </label>
+
+   <a class="item item-icon-left" ng-click="enviarInvitacion()">
+        Enviar Invitacion <i class="icon ion-paper-airplane"></i>
+  </a>
+            </ion-list>
+</ion-content>
+      </ion-view>
+
+
+
+

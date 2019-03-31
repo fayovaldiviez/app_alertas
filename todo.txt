@@ -1,0 +1,11 @@
+En la base de datos  crear una nueva tabla
+en donde al momento de registrar el usuario en la app
+mandara un estado true en la tabla y con el administrador que sea asignado por el provider
+el sistema (main.js) verificara si hay un estado alto segun el administrador logueado 
+y mandara la alerta de nuevo usuario registrado.
+
+
+--Modificar el main
+--Modificar el getUsuario.php
+--Modificar la app
+

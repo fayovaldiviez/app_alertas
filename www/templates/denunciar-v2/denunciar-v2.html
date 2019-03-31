@@ -1,0 +1,136 @@
+<!--<ion-view view-title="Perfil">-->
+ <!-- <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>-->
+
+	<!-- Buttons Top Bar Right
+	<ion-nav-buttons side="secondary">
+		<button class="button button-icon button-clear button-light ion-android-cancel" ng-click="logout()"></button>
+	</ion-nav-buttons>
+
+	--><ion-view view-title="Perfil" hide-nav-bar="true">
+	<ion-content class="stable-bg">
+	  
+
+
+<div class="list">
+	<div class="button-bar">
+		<br>
+		<br>
+
+<button class="button icon ion-camera" ng-click="addImage()"></button>
+
+<button class="button  icon ion-ios-videocam" ng-click="captureVideo()"></button>
+
+<button class="button  icon ion-ios-mic" ng-click="record()"></button>
+<!--
+<button  class="button button-full button-positive" ng-click="addImage()"> 
+  Denunciar con foto
+</button>-->
+
+
+ <!-- <img ng-repeat="image in images" ng-src="{{urlForImage(image)}}" height="200px"/>-->
+ <br>
+</div>
+
+
+<div ng-if="ControlesImagen">
+	<div class="item item-image">
+  	  <img ng-src="{{ imagenPhoto }}"  height="500px">
+	</div>
+   <a href="#" class="item item-icon-left">
+    <i class="icon ion-ios-musical-note"></i>
+    {{ imagenPhoto }}
+  </a>
+
+</div>
+
+<!--<div ng-if="ControlesVideo">
+	<div class="item">
+  	   <video controls="controls" preload="metadata" autoplay="autoplay" webkit-playsinline="webkit-playsinline" class="videoPlayer"><source src="{{ videofile }}" type="video/mp4"/></video>
+	</div>
+ </div> -->
+
+<div ng-if="ControlesVideo" class="video-container">
+<video controls="controls" preload="metadata" autoplay="autoplay" webkit-playsinline="webkit-playsinline" class="videoPlayer"><source ng-src="{{ videofile }}" type="video/mp4"/></video>
+</div>
+
+<!--
+<div ng-if="ControlesVideo">
+ <ion-list>
+        <div class="card">
+            <ion-item>
+                <div class="video-container">
+                    <iframe ng-src="{{ videofile }}" frameborder="0" width="560" height="315"></iframe>
+                </div>
+            </ion-item>
+        </div>
+ </ion-list>
+ </div>-->
+
+<div ng-if="ControlesAudio">
+	<div class="row">
+			<!--<div class="col">
+				<button class="button button-block button-balanced icon-left ion-android-microphone" ng-click="record()">Record</button>
+			</div>-->
+			<div class="col">
+				<button class="button button-block button-balanced icon-left ion-play" ng-click="play()">Play</button>
+			</div>
+		<div class="col">
+				<button class="button button-block button-energized icon-left ion-stop" ng-click="stop()">Stop</button>
+			</div>
+		</div>	
+</div>
+
+<label class="item item-input item-select">
+    <div class="input-label">
+      Tipo de alerta
+    </div>
+    <select>
+      <option>Seguridad Ciudadana</option>
+      <option>Proteccion civil</option>
+      <option>Bomberos</option>
+      <option>Servicios publicos</option>
+    </select>
+  </label>
+
+<br>
+<label class="item item-input item-stacked-label">
+	<span class="input-label">Comentarios</span>
+
+	<textarea placeholder="Máximo 100 caracteres" rows="8" cols="10">
+	</textarea>
+</label>
+
+<br>
+<button class="button button-block button-positive icon ion-paper-airplane">
+  Enviar alerta
+</button>
+
+
+
+
+
+
+	
+</div>
+	  </ion-content>
+	  </ion-view>
+<!--</ion-view>-->
+
+
+<style>
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+ 
+.video-container video, .video-container object, .video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+</style>

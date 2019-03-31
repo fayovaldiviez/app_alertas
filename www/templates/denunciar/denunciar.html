@@ -1,0 +1,93 @@
+<!--<ion-view hide-nav-bar="true">-->
+
+<ion-view cache-view="true" title="Reporta Bache/Luminaria" id="denunciar" style="background-color: #CF371D;">
+    <ion-content>
+        <br>
+        <br>
+        <br>
+        <div>
+            <img src="img/naucalpan-cumple.png" style="display: block; width: 60%; height: auto; margin-left: auto; margin-right: auto;">
+        </div>
+        <br>
+
+        <br>
+        <div ng-click="takePic()">
+            <img src="img/btn-evidencia-con_texto.png" style="display: block; width: 70%; height: auto; margin-left: auto; margin-right: auto;">
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+        <div style="text-align: center;">
+            <label class="item item-input" style="width: 75%; margin: 5px auto; -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;">
+    <textarea  ng-model="$parent.comentarios"  rows="5" placeholder="Referencia del lugar (opcional)" style="width: 100%; margin: 5px auto; -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px; "></textarea>
+  </label>
+        </div>
+
+        <!--<label  class="item item-input">
+    <textarea  ng-model="$parent.comentarios"  placeholder="Referencia de lugar (opcional)"  rows="2" width="80%" ></textarea>
+  </label>-->
+
+        <div>
+
+            <br>
+            <div ng-if="showButtons">
+                <div ng-click="deleteFoto()">
+                    <img src="img/okey.png" style="display: block; width: 8%; height: auto; margin-left: auto; margin-right: auto;">
+                </div>
+                <br>
+                <br>
+                <div ng-click="sendReport()">
+                    <img src="img/enviar.png" style="display: block; width: 40%; height: auto; margin-left: auto; margin-right: auto;">
+                </div>
+
+            </div>
+
+
+    </ion-content>
+</ion-view>
+
+
+
+<!--</ion-view>-->
+
+<style type="text/css">
+    .scroll-content>.scroll {
+        height: 100%;
+    }
+    
+    .scroll-content>.scroll>iframe {
+        min-height: 100%;
+    }
+    
+    .claseCustom .popup-body {
+        background-color: #05092E;
+        color: #e6b400;
+    }
+    
+    .claseCustom .popup-title {
+        display: none;
+    }
+    
+    .claseCustom .popup-head {
+        background-color: #05092E;
+        display: none;
+    }
+    
+    .claseCustom .popup-buttons .button {
+        display: none;
+        background-color: #4cd964;
+        font-size: 20px;
+    }
+    
+    .claseCustom .popup-buttons {
+        display: none;
+        background-color: #4cd964;
+        font-size: 20px;
+    }
+</style>

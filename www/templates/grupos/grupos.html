@@ -1,0 +1,29 @@
+<ion-view view-title="Grupos" id="account">
+	<ion-content padding="true" class="has-header">
+
+
+<div class="list">
+
+  <a  ng-click="abrirGrupo()" class="item item-icon-left">
+    <i class="icon ion-email"></i>
+    Abrir grupo
+  </a>
+  <a  ng-click="crearGrupo()" class="item item-icon-left">
+    <i class="icon ion-chatboxes"></i>
+    Crear Chat gruapal
+  </a>
+
+
+ <div class="item item-divider">
+    Chats en grupo
+  </div>
+ <ion-item collection-repeat="group in groups" ng-click="alertar(group.nombrechat,group.dbname)">
+    {{group.nombrechat}}
+  </ion-item>
+
+</div>
+
+
+
+	  </ion-content>
+	  </ion-view>

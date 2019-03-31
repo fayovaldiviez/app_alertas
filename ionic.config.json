@@ -1,0 +1,15 @@
+{
+  "name": "C4-24",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic1",
+  "watchPatterns": [
+    "scss/**/*",
+    "www/**/*",
+    "!www/lib/**/*",
+    "!www/**/*.map"
+  ],
+  "id": "c4618233",
+  "app_id": ""
+}

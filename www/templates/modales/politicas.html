@@ -1,0 +1,61 @@
+<ion-modal-view>
+    <ion-header-bar class="bar-calm">
+
+        <!-- style attribute for Android -->
+        <h1 class="title" style="text-align:center!important;">Póliticas de Privacidad</h1>
+
+        <!-- Button left -->
+        <button class="button button-icon button-clear button-light"></button>
+
+        <!-- Button right [empty] -->
+        <button class="button button-icon button-clear button-light ion-ios-close-empty" ng-click="closePoliticas()"></button>
+
+    </ion-header-bar>
+
+    <ion-content scroll="false">
+
+        <iframe src="http://blognaucalpan.com.mx/politica-de-privacidad.html" style="width: 100%; min-height:100% " scrolling="yes" marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0">
+</iframe>
+
+    </ion-content>
+</ion-modal-view>
+
+<style>
+    .col {
+        border: none;
+        border: 0px solid black;
+    }
+    
+    .col-90 {
+        border: none;
+        text-align: left;
+        margin-top: 9px;
+    }
+    
+    .lblcol {
+        /*font-size: 18px;*/
+        display: block;
+        text-align: left;
+        position: relative;
+        left: 16%;
+    }
+    
+    .checkbox input:checked:before,
+    .checkbox input:checked+.checkbox-icon:before {
+        background: #11C1F3 !important;
+        border: none;
+    }
+    
+    .item-checkbox {
+        padding-left: 60px;
+        border: none;
+    }
+    
+    .scroll-content>.scroll {
+        height: 100%;
+    }
+    
+    .scroll-content>.scroll>iframe {
+        min-height: 100%;
+    }
+</style>

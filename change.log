@@ -1,0 +1,10 @@
+-casi listos los ultimos cambios validos a la fecha de creacion del zip!
+
+Tareas restantes
+
+
+-Introducir las imagenes o textos correctos para el tutorial
+-Antes de enviar el registro, validar que los 2 checkbox's esten marcados
+-En el servidor subir la imagen que mandaron e introducirla en la primera pantalla que carga al iniciar sesion!
+-Quitar el sitetimeout de 3000 del splash screen en el app.js
+--Quitar mensajes de habilitar gps para mayor eficiencia, ya que se habilita solito desde codigo :D
