@@ -1,5 +1,5 @@
 <ion-modal-view ng-controller="AppCtrl">
-    <ion-header-bar class="bar-calm">
+    <ion-header-bar class="bar-calm" style="background-color: #CF371D;">
 
         <!-- style attribute for Android -->
         <h1 class="title" style="text-align:center!important;">Registro</h1>
@@ -48,8 +48,8 @@
         <input type="text" placeholder="Teléfono" ng-model="data.telefono" required>
       </label>
 
-<br>
-<br>
+                <br>
+                <br>
                 <div class="row">
                     <div class="col col">
                         <ion-checkbox ng-init="data.termcond=false" ng-model="data.termcond"></ion-checkbox>
@@ -71,10 +71,10 @@
 
 
                 <div class="validation-center">
-                    <input ng-show="registerForm.$valid && data.polpriv && data.termcond && btnRegistro" class="button button-balanced" type="submit" name="submit" value="Enviar registro">
+                    <input ng-show="registerForm.$valid && data.polpriv && data.termcond && btnRegistro" class="button button-balanced" style="background-color: #CC1F42" type="submit" name="submit" value="Enviar registro">
                     <div class="validation-center">
             </form>
-          <!--  <p class="calm text-center">
+            <!--  <p class="calm text-center">
                 Debes registrarte <br/>con un correo real
             </p> -->
 
@@ -108,7 +108,7 @@
     
     .checkbox input:checked:before,
     .checkbox input:checked+.checkbox-icon:before {
-        background: #11C1F3 !important;
+        background: #CC1F42 !important;
         border: none;
     }
     
